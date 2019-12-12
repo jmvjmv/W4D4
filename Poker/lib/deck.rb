@@ -2,11 +2,12 @@ require_relative "card"
 
 class Deck
 
-    attr_reader :cards
+    attr_reader :cards, :size
 
     def initialize 
         @cards = []
         self.populate
+        @size = @cards.length
     end
 
     def populate
@@ -23,9 +24,14 @@ class Deck
         end
     end
 
+    def shuffle
+        @cards.shuffle!
+    end
+
 end
 
 
 b = Deck.new
-
+b.cards.each {|card| puts "#{card.value} of #{card.suit}"}
+b.shuffle
 b.cards.each {|card| puts "#{card.value} of #{card.suit}"}
