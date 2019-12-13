@@ -2,7 +2,7 @@ require "card.rb"
 require "rspec"
 
 describe "Card" do 
-    subject(:card) {Card.new(:two, :diamond)}
+    subject(:card) {Card.new(:two, :diamond, 2)}
 
     describe "#initialize" do 
         it "should take in a value and a suit and initialize properly" do
